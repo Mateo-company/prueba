@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fruit Free</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- VERSION -->
+<div id="versionBox">v1.2.0</div>
+
+<!-- ====== UI GENERAL ====== -->
+<div id="ui">
+
+    <!-- ====== MENU PRINCIPAL ====== -->
+    <div id="menu" class="menuScreen center">
+        <h1 class="title">Fruit Free</h1>
+        <button class="btn" id="btnModes">Modos</button>
+        <button class="btn" id="btnSkins">Tienda de skins</button>
+        <button class="btn" id="btnOptions">Opciones</button>
+        <button class="btn" id="btncalific">Sugerencias</button>
+    </div>
+
+    <div id="skinsMenu" class="submenu hidden center">
+        <h2>Tienda de skins</h2>
+        <p class="coinBalance">Monedas: <span id="skinCoins">0</span> 🪙</p>
+        <button class="btn skinBtn" data-skin="original">Canasta original — Gratis</button>
+        <button class="btn skinBtn" data-skin="gold">Canasta dorada — 30 🪙</button>
+        <button class="btn skinBtn" data-skin="neon">Canasta neón — 60 🪙</button>
+        <button class="btn" id="btnBackSkins">Volver</button>
+    </div>
+
+    <div id="guideMenu" class="submenu hidden center">
+        <h2>Guía de Fruit Free</h2>
+        <div class="guideBox">
+            <h3>Objetivo</h3>
+            <p>Recoge las frutas buenas con la canasta y evita las frutas malas. Tienes 3 vidas.</p>
+
+            <h3>Controles</h3>
+            <p><strong>PC:</strong> flechas ← → o teclas A / D.</p>
+            <p><strong>Móvil:</strong> usa los botones ◀ y ▶. Pausa con el botón PAUSA o la barra espaciadora en PC.</p>
+
+            <h3>Frutas del modo Clásico</h3>
+            <p>✅ <strong>Buenas:</strong> manzana, naranja, kiwi y cereza. Dan puntos.</p>
+            <p>❌ <strong>Mala:</strong> manzana mala. Quita una vida.</p>
+
+            <h3>Modo Difícil</h3>
+            <p>✅ Naranja, kiwi y cereza son buenas.</p>
+            <p>⚠️ La manzana nueva puede convertirse en CambioUno durante la caída: desde ahí es mala.</p>
+            <p>❌ CambioUno puede aparecer directamente y, a veces, evolucionar a CambioDos. CambioDos siempre es mala.</p>
+            <p>Las frutas malas quitan una vida. Si dejas caer una buena, pierdes 1 punto y se reinicia la racha.</p>
+
+            <h3>Rachas y puntos</h3>
+            <p>La racha empieza al recoger 2 frutas buenas seguidas. Desde una racha de 5, cada fruta buena vale 2 puntos.</p>
+
+            <h3>Monedas y skins</h3>
+            <p>Al terminar una partida ganas 1 🪙 por cada 5 puntos obtenidos. Úsalas en la Tienda de skins para desbloquear y equipar estilos para tu canasta.</p>
+        </div>
+        <button class="btn" id="btnBackGuide">Volver</button>
+    </div>
+
+    <!-- ====== MODOS ====== -->
+    <div id="modesMenu" class="submenu hidden center">
+        <h2>Modos</h2>
+        <button class="btn" id="btnModeClassic">Modo Clásico</button>
+        <button class="btn" id="btnModeHard">Difícil</button>
+        <button class="btn" id="btnBackModes">Volver</button>
+    </div>
+
+    <!-- ====== OPCIONES ====== -->
+    <div id="optionsMenu" class="submenu hidden center">
+        <h2>Opciones</h2>
+
+        <div class="optionBlock">
+            <p>Música:</p>
+            <button class="btn small" id="btnMusic">ON</button>
+        </div>
+
+        <button class="btn small" id="btnGuide">Guía</button>
+        <button class="btn small" id="btnCredits">Créditos</button>
+        <button class="btn small" id="btnmjrs">Novedades</button>
+        <button class="btn" id="btnMainMenuOptions">Menú principal</button>
+    </div>
+
+    <!-- ====== CRÉDITOS ====== -->
+    <div id="creditsMenu" class="submenu hidden center">
+        <h2>Créditos del equipo</h2>
+        <p>Programación y código: Mateo</p>
+        <p>Nombre del juego: kiki</p>
+        <p>Diseño y dibujos: Yellosanz</p>
+        <button class="btn" id="btnBackCredits">Volver</button>
+    </div>
+
+    <!-- ====== NOVEDADES ====== -->
+    <div id="newsMenu" class="submenu hidden center">
+        <h2>Novedades</h2>
+
+        <div class="newsBox">
+            <p>🟢 v1.1.1</p>
+            <p>🟡 Novedades:</p>
+            <p>error al .</p>
+            <hr>
+            <p>Gracias por jugar Fruit Free.</p>
+            <p>Esta es la primera versión del juego.</p>
+            <p>Tu opinión es importante para futuras actualizaciones.</p>
+        </div>
+
+        <button class="btn" id="btnBackNews">Volver</button>
+    </div>
+
+    <!-- ====== SUGERENCIAS ====== -->
+    <div id="suggestMenu" class="submenu hidden center">
+        <h2>Sugerencias</h2>
+
+        <form id="suggestForm"
+              action="https://formspree.io/f/xyzrqlbr"
+              method="POST"
+              class="suggestBox">
+
+            <label>
+                ¿Quién eres? (opcional)
+                <input type="text" name="usuario" placeholder="Usuario">
+            </label>
+
+            <label>
+                Tu sugerencia
+                <textarea name="sugerencia" required placeholder="Escribe tu idea aquí..."></textarea>
+            </label>
+
+            <button type="submit" class="btn small">Enviar</button>
+        </form>
+
+        <button class="btn" id="btnBackSuggest">Volver</button>
+    </div>
+
+</div>
+
+<!-- ====== OVERLAY GRACIAS ====== -->
+<div id="thanksOverlay" class="overlay hidden">
+    <div class="thanksBox">
+        <h3>¡Gracias por tu sugerencia! 💖</h3>
+        <p>Tu idea nos ayuda a mejorar Fruit Free.</p>
+        <button class="btn small" id="btnThanksBack">Volver</button>
+    </div>
+</div>
+
+<!-- ====== ESCENA DEL JUEGO ====== -->
+<div id="gameScene" class="hidden">
+
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <div id="hud">
+        <div id="scoreBox">Puntos: <span id="score">0</span></div>
+        <div id="livesBox">Vidas: <span id="lives">❤❤❤</span></div>
+        <button id="pauseBtn">PAUSA</button>
+    </div>
+    <div id="touchControls" aria-label="Controles del juego">
+        <button class="touchBtn" data-direction="left" aria-label="Mover a la izquierda">◀</button>
+        <button class="touchBtn" data-direction="right" aria-label="Mover a la derecha">▶</button>
+    </div>
+
+    <!-- ====== PAUSA ====== -->
+    <div id="pauseOverlay" class="hidden overlay">
+        <div class="pauseBox">
+            <h2>Pausa</h2>
+            <button id="resumeBtn">Continuar</button>
+            <button id="menuBtn">Menú</button>
+        </div>
+    </div>
+
+    <!-- ====== GAME OVER ====== -->
+    <div id="gameOverOverlay" class="hidden overlay">
+        <div class="gameOverBox">
+            <h1 class="gameOverTitle">GAME OVER</h1>
+
+            <p class="gameOverText">
+                Tu score: <span id="finalScore">0</span>
+            </p>
+
+            <p class="gameOverRecord">
+                Récord: <span id="finalRecord">0</span>
+            </p>
+
+            <button class="btn" id="retryBtn">Reintentar</button>
+            <button class="btn" id="backMenuBtn">Menú principal</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/menu.js"></script>
+<script src="js/game.js"></script>
+<script>
+document.querySelectorAll('.touchBtn').forEach(button => {
+    const key = button.dataset.direction;
+    const set = value => { keys[key] = value; };
+    button.addEventListener('pointerdown', event => { event.preventDefault(); set(true); });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(event => button.addEventListener(event, () => set(false)));
+});
+</script>
+
+</body>
+</html>
